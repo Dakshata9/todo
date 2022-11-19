@@ -21,13 +21,13 @@ describe("To-dolist test", () => {
     });
   });
   test("Should add one to-do", () => {
-    const tdCount = all.length;
+    const tyCount = all.length;
     add({
       title: "Test todo tk 1",
       completed: false,
       dueDate: today,
     });
-    expect(all.length).toBe(todoCount + 1);
+    expect(all.length).toBe(tyCount + 1);
   });
   test("need to Mark to-do as Complete", () => {
     expect(all[0].completed).toBe(false);
@@ -35,19 +35,19 @@ describe("To-dolist test", () => {
     expect(all[0].completed).toBe(true);
   });
   test("retrieve overdue items", () => {
-    let ovrdue_todos = overdue();
-    let countvar = ovrdue_todos.length;
+    let ovdue_todos = overdue();
+    let countvar = ovdue_todos.length;
     add({
       title: "Test todo tk 2",
       completed: false,
       dueDate: yesterday,
     });
-    ovrduetodos = overdue();
-    expect(ovrduetodos.length).toBe(countvar + 1);
+    ovdue_todos = overdue();
+    expect(ovdue_todos.length).toBe(countvar + 1);
   });
   test("must Retrieves due today items", () => {
     let dTodaytodos = dueToday();
-    let countvar = dueToday_todos.length;
+    let countvar = dTodaytodos.length;
     add({
       title: "Test todo tk 3",
       completed: false,
@@ -58,7 +58,7 @@ describe("To-dolist test", () => {
   });
   test("Retrieve the due-later items", () => {
     let duLtodos = dueLater();
-    let countvar = dueLater_todos.length;
+    let countvar = duLtodos.length;
     add({
       title: "Test todo task4",
       completed: false,
